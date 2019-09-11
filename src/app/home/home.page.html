@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding">
+        <ion-list *ngIf="peoples && peoples.length > 0">
+            <ion-item *ngFor="let people of peoples">
+                <app-people [people]="people">
+                </app-people>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll [disabled]="!hasNext" (ionInfinite)="load($event)">
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+</ion-content>
